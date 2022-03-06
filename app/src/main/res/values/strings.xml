@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Ejemplo Fragmentos Específicos</string>
+    <string name="profile_lblSignUpDate">Fecha</string>
+    <string name="profile_txtSignUpDate">Fecha</string>
+    <string name="profile_lblCivilState">Estado Civil</string>
+    <string name="profile_btnSave">Guardar</string>
+    <string name="profile_title">Perfil</string>
+    <string name="profile_confirmation">Guardado</string>
+    <string name="profile_sure">Mensaje</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Guardar</string>
+    <string name="profile_save_user">Guardado</string>
+</resources>
