@@ -2,7 +2,9 @@
 
 <resources>
     <string-array name="civil_states">
-        <item>Soltero</item>
-        <item>Casado</item>
+        <item >Single</item>
+        <item >Married</item>
+        <item >Divorced</item>
+        <item >Widowed</item>
     </string-array>
 </resources>

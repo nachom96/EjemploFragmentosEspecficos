@@ -14,13 +14,15 @@ import com.example.ejemplofragmentosespecficos.databinding.ProfileFragmentBindin
 import java.text.SimpleDateFormat
 import java.util.*
 
+// TODO Quitar ToolBar Principal
+
+private const val CIVIL_STATE_DIALOG_TAG = "CIVIL_STATE_DIALOG_TAG"
+private const val CIVIL_STATE_REQUEST_KEY: String = "CIVIL_STATE_REQUEST_KEY"
 private const val CONFIRMATION_DIALOG_TAG = "CONFIRMATION_DIALOG_TAG"
 private const val CONFIRMATION_REQUEST_KEY = "CONFIRMATION_REQUEST_KEY"
 
 class ProfileFragment : Fragment(R.layout.profile_fragment) {
-
-    // ...
-
+    
     var simpleDateFormat: SimpleDateFormat = SimpleDateFormat()
 
     private val viewModel: ProfileViewModel by activityViewModels()
@@ -34,6 +36,12 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
             if (ConfirmationDialogFragment.isResponsePositive(responseBundle)) {
                 save()
             }
+        }
+
+        setFragmentResultListener(CIVIL_STATE_REQUEST_KEY) { _, responseBundle ->
+            viewModel.changeCivilState(
+                SimpleSelectionDialogFragment.getSelectedIndex(responseBundle)
+            )
         }
     }
 
@@ -52,7 +60,7 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
             with(txtSignUpDate) {
                 keyListener = null
                 setOnClickListener {
-                    showSignUpDateSelectionDialog()
+                    //showSignUpDateSelectionDialog()
                 }
             }
             with(txtCivilState) {
@@ -71,6 +79,17 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
             noText = getString(R.string.cancel),
             requestKey = CONFIRMATION_REQUEST_KEY,
         ).show(parentFragmentManager, CONFIRMATION_DIALOG_TAG)
+    }
+
+    private fun showCivilStateSelectionDialog() {
+        val civilStates = resources.getStringArray(R.array.civil_states)
+        SimpleSelectionDialogFragment.newInstance(
+            title = getString(R.string.profile_civil_state),
+            items = civilStates,
+            confirmText = getString(R.string.profile_accept),
+            defaultSelectedIndex = viewModel.civilStateIndex.value!!,
+            requestKey = CIVIL_STATE_REQUEST_KEY,
+        ).show(parentFragmentManager, CIVIL_STATE_DIALOG_TAG)
     }
 
     private fun save() {

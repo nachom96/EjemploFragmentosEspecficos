@@ -10,4 +10,6 @@
     <string name="cancel">Cancelar</string>
     <string name="save">Guardar</string>
     <string name="profile_save_user">Guardado</string>
+    <string name="profile_civil_state">Estado Civil</string>
+    <string name="profile_accept">Aceptar</string>
 </resources>
