@@ -12,4 +12,5 @@
     <string name="profile_save_user">Guardado</string>
     <string name="profile_civil_state">Estado Civil</string>
     <string name="profile_accept">Aceptar</string>
+    <string name="profile_mnuSettings">Settings</string>
 </resources>

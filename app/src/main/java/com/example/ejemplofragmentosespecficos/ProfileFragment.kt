@@ -62,6 +62,13 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
         with(binding) {
             with(toolbar) {
                 title = getString(R.string.profile_title)
+                inflateMenu(R.menu.profile_fragment)
+                setOnMenuItemClickListener { menuItem ->
+                    when (menuItem.itemId) {
+                        R.id.mnuSettings -> navigateToSettings().let { true }
+                        else -> false
+                    }
+                }
             }
             with(txtSignUpDate) {
                 keyListener = null
@@ -75,6 +82,10 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
             }
             btnSave.setOnClickListener { onSave() }
         }
+    }
+
+    private fun navigateToSettings() {
+        // ...
     }
 
     private fun showConfirmationDialog() {
