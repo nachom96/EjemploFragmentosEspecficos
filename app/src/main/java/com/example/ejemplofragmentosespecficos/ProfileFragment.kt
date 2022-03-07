@@ -2,15 +2,13 @@ package com.example.ejemplofragmentosespecficos
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.setFragmentResultListener
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.*
 import com.example.ejemplofragmentosespecficos.databinding.ProfileFragmentBinding
+import com.example.ejemplofragmentosespecficos.repository.DefaultSettingsRepository
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,7 +23,9 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
 
     var simpleDateFormat: SimpleDateFormat = SimpleDateFormat()
 
-    private val viewModel: ProfileViewModel by activityViewModels()
+    private val viewModel: ProfileViewModel by viewModels {
+        ProfileViewModel.Factory(DefaultSettingsRepository(requireActivity().application), this)
+    }
 
     private var _binding: ProfileFragmentBinding? = null
     private val binding get() = _binding!!
@@ -85,7 +85,11 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
     }
 
     private fun navigateToSettings() {
-        // ...
+        parentFragmentManager.commit {
+            setReorderingAllowed(true)
+            replace<SettingsFragment>(R.id.fcContent)
+            addToBackStack(null)
+        }
     }
 
     private fun showConfirmationDialog() {
@@ -136,7 +140,11 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
     }
 
     private fun onSave() {
-        showConfirmationDialog()
+        if (viewModel.shouldConfirmSave) {
+            showConfirmationDialog()
+        } else {
+            save()
+        }
     }
 
     private fun showSignUpDateSelectionDialog() {

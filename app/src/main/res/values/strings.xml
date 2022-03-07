@@ -13,4 +13,14 @@
     <string name="profile_civil_state">Estado Civil</string>
     <string name="profile_accept">Aceptar</string>
     <string name="profile_mnuSettings">Settings</string>
+    <string name="prefProfileCategory_title">Preferencia</string>
+    <string name="prefCivilState_defaultValue">Soltero</string>
+    <string name="prefCivilState_dialogTitle">Preferencia Estado Civil</string>
+    <string name="prefCivilState_key">Estado_civil</string>
+    <string name="prefCivilState_title">Estado Civil</string>
+    <string name="prefConfirmSave_key">Confirm_Key</string>
+    <string name="prefConfirmSave_title">Confirmar</string>
+    <string name="prefAboutCategory_title">Preferencia Acerca De</string>
+    <string name="prefWeb_title">Preferencia Web</string>
+    <string name="settings_title">Settings</string>
 </resources>

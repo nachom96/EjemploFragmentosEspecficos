@@ -1,14 +1,19 @@
 package com.example.ejemplofragmentosespecficos
 
+import android.os.Bundle
+import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.savedstate.SavedStateRegistryOwner
+import com.example.ejemplofragmentosespecficos.repository.SettingsRepository
 import java.util.*
 
 private const val STATE_CIVIL_STATE_INDEX: String = "STATE_CIVIL_STATE_INDEX"
 private const val STATE_SIGN_UP_DATE: String = "STATE_SIGN_UP_DATE"
 
 class ProfileViewModel(
+    settingsRepository: SettingsRepository,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -21,12 +26,31 @@ class ProfileViewModel(
     )
     val signUpDate: LiveData<Long> get() = _signUpDate
 
+    val shouldConfirmSave: Boolean = settingsRepository.queryConfirmSave()
+
     fun changeCivilState(index: Int) {
         _civilStateIndex.value = index
     }
 
     fun changeSignUpDate(utcTimeInMillis: Long) {
         _signUpDate.value = utcTimeInMillis
+    }
+
+    class Factory(
+        private val settingsRepository: SettingsRepository,
+        owner: SavedStateRegistryOwner,
+        defaultArgs: Bundle? = null
+    ) : AbstractSavedStateViewModelFactory(owner, defaultArgs) {
+
+        @Suppress("UNCHECKED_CAST")
+        override fun <T : ViewModel?> create(
+            key: String,
+            modelClass: Class<T>,
+            handle: SavedStateHandle
+        ): T {
+            return ProfileViewModel(settingsRepository, handle) as T
+        }
+
     }
 
 }
