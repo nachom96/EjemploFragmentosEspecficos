@@ -18,6 +18,7 @@ class SettingsFragment : Fragment(R.layout.settings_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = SettingsFragmentBinding.bind(requireView())
         setupToolbar()
     }
 

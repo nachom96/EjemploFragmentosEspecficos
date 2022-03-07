@@ -19,7 +19,7 @@
     <string name="prefCivilState_key">Estado_civil</string>
     <string name="prefCivilState_title">Estado Civil</string>
     <string name="prefConfirmSave_key">Confirm_Key</string>
-    <string name="prefConfirmSave_title">Confirmar</string>
+    <string name="prefConfirmSave_title">Guardar elección</string>
     <string name="prefAboutCategory_title">Preferencia Acerca De</string>
     <string name="prefWeb_title">Preferencia Web</string>
     <string name="settings_title">Settings</string>
