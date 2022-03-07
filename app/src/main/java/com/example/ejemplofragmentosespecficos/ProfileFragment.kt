@@ -14,15 +14,15 @@ import com.example.ejemplofragmentosespecficos.databinding.ProfileFragmentBindin
 import java.text.SimpleDateFormat
 import java.util.*
 
-// TODO Quitar ToolBar Principal
-
 private const val CIVIL_STATE_DIALOG_TAG = "CIVIL_STATE_DIALOG_TAG"
 private const val CIVIL_STATE_REQUEST_KEY: String = "CIVIL_STATE_REQUEST_KEY"
 private const val CONFIRMATION_DIALOG_TAG = "CONFIRMATION_DIALOG_TAG"
 private const val CONFIRMATION_REQUEST_KEY = "CONFIRMATION_REQUEST_KEY"
+private const val SIGN_UP_DATE_DIALOG_TAG = "SIGN_UP_DIALOG_TAG"
+private const val SIGN_UP_DATE_REQUEST_KEY: String = "SIGN_UP_DATE_REQUEST_KEY"
 
 class ProfileFragment : Fragment(R.layout.profile_fragment) {
-    
+
     var simpleDateFormat: SimpleDateFormat = SimpleDateFormat()
 
     private val viewModel: ProfileViewModel by activityViewModels()
@@ -43,6 +43,12 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
                 SimpleSelectionDialogFragment.getSelectedIndex(responseBundle)
             )
         }
+
+        setFragmentResultListener(SIGN_UP_DATE_REQUEST_KEY) { _, responseBundle ->
+            viewModel.changeSignUpDate(
+                DatePickerDialogFragment.getSelectedUtcTimeInMillis(responseBundle)
+            )
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,7 +66,7 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
             with(txtSignUpDate) {
                 keyListener = null
                 setOnClickListener {
-                    //showSignUpDateSelectionDialog()
+                    showSignUpDateSelectionDialog()
                 }
             }
             with(txtCivilState) {
@@ -122,9 +128,13 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
         showConfirmationDialog()
     }
 
-    private fun showSignUpDateSelectionDialog(currentDate: String) {
-        // ...
+    private fun showSignUpDateSelectionDialog() {
+        DatePickerDialogFragment.newInstance(
+            requestKey = SIGN_UP_DATE_REQUEST_KEY,
+            utcTimeInMillis = viewModel.signUpDate.value!!
+        ).show(parentFragmentManager, SIGN_UP_DATE_DIALOG_TAG)
     }
+
 
     private fun showCivilStateSelectionDialog(civilState: String) {
         // ...
