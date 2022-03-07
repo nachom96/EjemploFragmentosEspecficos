@@ -1,4 +1,4 @@
-package com.example.ejemplofragmentosespecficos
+package com.example.ejemplofragmentosespecficos.ui.datePicker
 
 import androidx.lifecycle.ViewModel
 

@@ -1,4 +1,4 @@
-package com.example.ejemplofragmentosespecficos
+package com.example.ejemplofragmentosespecficos.ui.settings
 
 import androidx.lifecycle.ViewModel
 

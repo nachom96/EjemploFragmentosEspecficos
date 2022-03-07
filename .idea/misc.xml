@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nacho/AndroidStudioProjects/EjemploFragmentosEspecficos/app/src/main/res/layout/date_picker_dialog_fragment.xml" value="0.20531526836894215" />
         <entry key="..\:/Users/Nacho/AndroidStudioProjects/EjemploFragmentosEspecficos/app/src/main/res/layout/profile_fragment.xml" value="0.36685773840541946" />
         <entry key="..\:/Users/Nacho/AndroidStudioProjects/EjemploFragmentosEspecficos/app/src/main/res/layout/settings_fragment.xml" value="0.36685773840541946" />
         <entry key="..\:/Users/Nacho/AndroidStudioProjects/EjemploFragmentosEspecficos/app/src/main/res/menu/profile_fragment.xml" value="0.4483870967741935" />
         <entry key="..\:/Users/Nacho/AndroidStudioProjects/EjemploFragmentosEspecficos/app/src/main/res/xml/acerca_de.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Nacho/AndroidStudioProjects/EjemploFragmentosEspecficos/app/src/main/res/xml/preferences.xml" value="0.5653382761816497" />
       </map>
     </option>
   </component>

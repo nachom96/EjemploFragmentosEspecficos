@@ -1,4 +1,4 @@
-package com.example.ejemplofragmentosespecficos
+package com.example.ejemplofragmentosespecficos.ui.profile
 
 import android.os.Bundle
 import androidx.lifecycle.AbstractSavedStateViewModelFactory

@@ -1,4 +1,4 @@
-package com.example.ejemplofragmentosespecficos
+package com.example.ejemplofragmentosespecficos.ui.confirmationDialog
 
 import android.app.Dialog
 import androidx.lifecycle.ViewModelProvider

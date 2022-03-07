@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SettingsFragment">
+    tools:context=".ui.settings.SettingsFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -22,7 +22,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcSettingsList"
-        android:name="com.example.ejemplofragmentosespecficos.SettingsListFragment"
+        android:name="com.example.ejemplofragmentosespecficos.ui.settings.SettingsListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

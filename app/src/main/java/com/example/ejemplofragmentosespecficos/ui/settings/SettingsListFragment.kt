@@ -1,7 +1,8 @@
-package com.example.ejemplofragmentosespecficos
+package com.example.ejemplofragmentosespecficos.ui.settings
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
+import com.example.ejemplofragmentosespecficos.R
 
 class SettingsListFragment : PreferenceFragmentCompat() {
 

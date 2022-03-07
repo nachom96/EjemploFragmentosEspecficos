@@ -1,14 +1,16 @@
-package com.example.ejemplofragmentosespecficos
+package com.example.ejemplofragmentosespecficos.ui.profile
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.*
+import com.example.ejemplofragmentosespecficos.R
+import com.example.ejemplofragmentosespecficos.ui.settings.SettingsFragment
+import com.example.ejemplofragmentosespecficos.ui.simpleSelectionDialog.SimpleSelectionDialogFragment
 import com.example.ejemplofragmentosespecficos.databinding.ProfileFragmentBinding
 import com.example.ejemplofragmentosespecficos.repository.DefaultSettingsRepository
+import com.example.ejemplofragmentosespecficos.ui.confirmationDialog.ConfirmationDialogFragment
+import com.example.ejemplofragmentosespecficos.ui.datePicker.DatePickerDialogFragment
 import java.text.SimpleDateFormat
 import java.util.*
 

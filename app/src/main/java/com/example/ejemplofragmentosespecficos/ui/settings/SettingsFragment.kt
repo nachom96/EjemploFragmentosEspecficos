@@ -1,13 +1,9 @@
-package com.example.ejemplofragmentosespecficos
+package com.example.ejemplofragmentosespecficos.ui.settings
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.activityViewModels
-import com.example.ejemplofragmentosespecficos.databinding.ProfileFragmentBinding
+import com.example.ejemplofragmentosespecficos.R
 import com.example.ejemplofragmentosespecficos.databinding.SettingsFragmentBinding
 
 class SettingsFragment : Fragment(R.layout.settings_fragment) {
